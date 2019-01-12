@@ -9,12 +9,16 @@
 #ifndef XLog_hpp
 #define XLog_hpp
 
+
 #include <stdio.h>
+#define __DEBUG__
+#define __IOS__
+#define __OS_LOG__
 
 #ifdef __DEBUG__
 #ifdef __OS_LOG__
 #if defined(__ANDROID__)
-#define LOGD(...) __android_log_print(LOG_DEBUG,LOG_TAG,__VA_ARGS__)
+#define LOGK(...) __android_log_print(LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 #define LOGI(...) __android_log_print(LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define LOGL()    __android_log_print(LOG_INFO,LOG_TAG,"<%s,%s,%d>",__FILENAME__,__FUNCTION__,__LINE__)
 #define LOGK(...) __android_log_print(LOG_KILL,LOG_TAG,__VA_ARGS__)
@@ -23,7 +27,7 @@
 #define LOGTAGI(TAG,...) __android_log_print(LOG_KILL,TAG,__VA_ARGS__)
 #define LOGTAGL(TAG)    __android_log_print(LOG_KILL,TAG,"<%s,%s,%d>",__FILENAME__,__FUNCTION__,__LINE__)
 #elif defined(__IOS__)
-#define LOGD(...) printf(__VA_ARGS__)
+#define LOGK(...) printf(__VA_ARGS__)
 #define LOGI(...) printf(__VA_ARGS__)
 #define LOGK(...) printf(__VA_ARGS__)
 #define LOGF(...) printf(__VA_ARGS__)
@@ -32,7 +36,7 @@
 #define LOGTAGI(TAG,...) printf(__VA_ARGS__)
 #define LOGTAGL(TAG) printf("<%s,%s,%d>",__FILENAME__,__FUNCTION__,__LINE__)
 #else
-#define LOGD(...) printf(__VA_ARGS__)
+#define LOGK(...) printf(__VA_ARGS__)
 #define LOGI(...) printf(__VA_ARGS__)
 #define LOGK(...) printf(__VA_ARGS__)
 #define LOGF(...) printf(__VA_ARGS__)
@@ -41,7 +45,7 @@
 #define LOGTAGL(TAG) printf("<%s,%s,%d>",__FILENAME__,__FUNCTION__,__LINE__)
 #endif
 #else
-#define LOGD(...) av_logger_nprintf(LOG_DEBUG,LOG_TAG,nullptr,__FILENAME__,__FUNCTION__,__LINE__,__VA_ARGS__)
+#define LOGK(...) av_logger_nprintf(LOG_DEBUG,LOG_TAG,nullptr,__FILENAME__,__FUNCTION__,__LINE__,__VA_ARGS__)
 #define LOGI(...) av_logger_nprintf(LOG_INFO,LOG_TAG,nullptr,__FILENAME__,__FUNCTION__,__LINE__,__VA_ARGS__)
 #define LOGL()    av_logger_lprintf(LOG_INFO,LOG_TAG,__FILENAME__,__FUNCTION__,__LINE__)
 #define LOGK(...) av_logger_nprintf(LOG_KILL,LOG_TAG,this,__FILENAME__,__FUNCTION__,__LINE__,__VA_ARGS__)
@@ -61,7 +65,7 @@
 #endif
 #else
 #define LOGV(...)
-#define LOGD(...)
+#define LOGK(...)
 #define LOGI(...)
 #define LOGK(...)
 #define LOGL()

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2AF34E21E8C795009BFADF /* IObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AF34C21E8C795009BFADF /* IObserver.cpp */; };
+		4C2AF35121E8D184009BFADF /* IDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AF34F21E8D184009BFADF /* IDecode.cpp */; };
+		4C2AF35421E8D195009BFADF /* FFDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AF35221E8D195009BFADF /* FFDecode.cpp */; };
+		4C2AF35721E8D1C5009BFADF /* XParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AF35521E8D1C5009BFADF /* XParameter.cpp */; };
 		4C36269E21888BA000814CDD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C36269D21888BA000814CDD /* AppDelegate.m */; };
 		4C3626A121888BA000814CDD /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C3626A021888BA000814CDD /* ViewController.mm */; };
 		4C3626A421888BA000814CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3626A221888BA000814CDD /* Main.storyboard */; };
@@ -27,6 +31,7 @@
 		4C3C2D2421E4E7080029BCE0 /* FFDemux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C2D2221E4E7080029BCE0 /* FFDemux.cpp */; };
 		4C3C2D2721E4E7190029BCE0 /* XData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C2D2521E4E7190029BCE0 /* XData.cpp */; };
 		4C3C2D3021E623C30029BCE0 /* XLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C2D2E21E623C30029BCE0 /* XLog.mm */; };
+		4C3C2D3321E636740029BCE0 /* XThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C2D3121E636740029BCE0 /* XThread.cpp */; };
 		4C617D0E21D3B42700BF0DF7 /* 2s5fh-w8kz2.flv in Resources */ = {isa = PBXBuildFile; fileRef = 4C617D0D21D3B42700BF0DF7 /* 2s5fh-w8kz2.flv */; };
 		4CA379D521DB6E26008FA4C3 /* util.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379D421DB6E26008FA4C3 /* util.mm */; };
 		4CA379D721DB73E0008FA4C3 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA379D621DB73E0008FA4C3 /* GLKit.framework */; };
@@ -51,6 +56,14 @@
 
 /* Begin PBXFileReference section */
 		4C10963D21AE950F002FF1A5 /* ffplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffplay.h; sourceTree = "<group>"; };
+		4C2AF34C21E8C795009BFADF /* IObserver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IObserver.cpp; sourceTree = "<group>"; };
+		4C2AF34D21E8C795009BFADF /* IObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IObserver.h; sourceTree = "<group>"; };
+		4C2AF34F21E8D184009BFADF /* IDecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IDecode.cpp; sourceTree = "<group>"; };
+		4C2AF35021E8D184009BFADF /* IDecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDecode.h; sourceTree = "<group>"; };
+		4C2AF35221E8D195009BFADF /* FFDecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FFDecode.cpp; sourceTree = "<group>"; };
+		4C2AF35321E8D195009BFADF /* FFDecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFDecode.h; sourceTree = "<group>"; };
+		4C2AF35521E8D1C5009BFADF /* XParameter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XParameter.cpp; sourceTree = "<group>"; };
+		4C2AF35621E8D1C5009BFADF /* XParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XParameter.h; sourceTree = "<group>"; };
 		4C36269921888BA000814CDD /* VideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C36269C21888BA000814CDD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C36269D21888BA000814CDD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -206,6 +219,8 @@
 		4C3C2D2621E4E7190029BCE0 /* XData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XData.h; sourceTree = "<group>"; };
 		4C3C2D2E21E623C30029BCE0 /* XLog.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XLog.mm; sourceTree = "<group>"; };
 		4C3C2D2F21E623C30029BCE0 /* XLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLog.h; sourceTree = "<group>"; };
+		4C3C2D3121E636740029BCE0 /* XThread.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XThread.cpp; sourceTree = "<group>"; };
+		4C3C2D3221E636740029BCE0 /* XThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XThread.h; sourceTree = "<group>"; };
 		4C617D0D21D3B42700BF0DF7 /* 2s5fh-w8kz2.flv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2s5fh-w8kz2.flv"; sourceTree = "<group>"; };
 		4CA379D321DB6E26008FA4C3 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		4CA379D421DB6E26008FA4C3 /* util.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = util.mm; sourceTree = "<group>"; };
@@ -600,6 +615,16 @@
 				4C3C2D2621E4E7190029BCE0 /* XData.h */,
 				4C3C2D2E21E623C30029BCE0 /* XLog.mm */,
 				4C3C2D2F21E623C30029BCE0 /* XLog.h */,
+				4C3C2D3121E636740029BCE0 /* XThread.cpp */,
+				4C3C2D3221E636740029BCE0 /* XThread.h */,
+				4C2AF34C21E8C795009BFADF /* IObserver.cpp */,
+				4C2AF34D21E8C795009BFADF /* IObserver.h */,
+				4C2AF34F21E8D184009BFADF /* IDecode.cpp */,
+				4C2AF35021E8D184009BFADF /* IDecode.h */,
+				4C2AF35221E8D195009BFADF /* FFDecode.cpp */,
+				4C2AF35321E8D195009BFADF /* FFDecode.h */,
+				4C2AF35521E8D1C5009BFADF /* XParameter.cpp */,
+				4C2AF35621E8D1C5009BFADF /* XParameter.h */,
 			);
 			path = Xplayer;
 			sourceTree = "<group>";
@@ -762,13 +787,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C3C2D3021E623C30029BCE0 /* XLog.mm in Sources */,
+				4C2AF35421E8D195009BFADF /* FFDecode.cpp in Sources */,
+				4C2AF35121E8D184009BFADF /* IDecode.cpp in Sources */,
 				4CA379D521DB6E26008FA4C3 /* util.mm in Sources */,
 				4C3C2D2121E4E6E00029BCE0 /* IDemux.cpp in Sources */,
 				4C3626A121888BA000814CDD /* ViewController.mm in Sources */,
 				4C3C2D2421E4E7080029BCE0 /* FFDemux.cpp in Sources */,
+				4C3C2D3321E636740029BCE0 /* XThread.cpp in Sources */,
 				4C3C2D2721E4E7190029BCE0 /* XData.cpp in Sources */,
 				4C3626AC21888BA200814CDD /* main.m in Sources */,
+				4C2AF35721E8D1C5009BFADF /* XParameter.cpp in Sources */,
 				4C36269E21888BA000814CDD /* AppDelegate.m in Sources */,
+				4C2AF34E21E8C795009BFADF /* IObserver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

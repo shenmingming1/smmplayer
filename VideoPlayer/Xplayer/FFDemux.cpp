@@ -8,40 +8,52 @@
 
 #include "FFDemux.h"
 #include "XLog.h"
+
 extern "C"
 {
 #include "libavformat/avformat.h"
 };
 //打开文件，或者流媒体 rmtp,http rtsp
 bool FFDemux::Open(const char *url){
-    LOGD("Open file %s begin",url);
-    int re = avformat_open_input(&mIc, url, 0, 0);
+    LOGK("Open file %s begin\n",url);
+    int re = avformat_open_input(&mContext, url, 0, 0);
     if (re != 0) {
         char buf[1024] = {0};
         av_strerror(re, buf, sizeof(buf));
-        LOGD("FFDemx open %s failed!",url);
+        LOGK("FFDemx open %s failed!\n",url);
         return false;
     }
     //读取文件信息
-    re = avformat_find_stream_info(mIc, 0);
+    re = avformat_find_stream_info(mContext, 0);
     if (re != 0) {
         char buf[1024] = {0};
         av_strerror(re, buf, sizeof(buf));
-        LOGD("avformat_find_stream_info %s failed!",url);
+        LOGK("avformat_find_stream_info %s failed!\n",url);
         return false;
     }
-    mTotalMS = mIc->duration/(AV_TIME_BASE/1000);
-    LOGD("totalMS ms = %d!",mTotalMS);
+    mTotalMS = mContext->duration/(AV_TIME_BASE/1000);
+    LOGK("totalMS ms = %lld!\n",mTotalMS);
     return true;
 }
 // 读取一帧数据，数据由调用者清理
 XData FFDemux::Read(){
+    if(!mContext) return XData();
     XData data;
+    AVPacket *pkt = av_packet_alloc();
+    int re = av_read_frame(mContext, pkt);
+    if (re != 0) {
+        av_packet_free(&pkt);
+        LOGK("read failed\n");
+        return XData();
+    }
+    LOGK("pack size is %d ptss %lld!\n",pkt->size,pkt->pts);
+    data.data = (unsigned char*)pkt;
+    data.size = pkt->size;
     return data;
 }
 FFDemux::FFDemux()
 :mTotalMS(0)
-,mIc(0)
+,mContext(0)
 {
     static bool isFirst = true;
     if (isFirst) {
@@ -52,7 +64,7 @@ FFDemux::FFDemux()
         avcodec_register_all();
         //初始化网络
         avformat_network_init();
-        LOGD("register ffmpeg");
+        LOGK("register ffmpeg\n");
     }
     
 }
