@@ -10,11 +10,11 @@
 #import "util.h"
 #include "Xplayer/FFDemux.h"
 #include "Xplayer/XLog.h"
-
+#include "Xplayer/FFDecode.h"
 class TestObserver : public IObserver{
 public:
     virtual void Update(XData data){
-        LOGK("TestObserver Update data Size is %d",data.size);
+//        LOGK("TestObserver Update data Size is %d\n",data.size);
     }
 };
 @interface ViewController ()
@@ -32,6 +32,8 @@ public:
     demux->Open(filePath_char);
     demux->AddObservers(test);
     demux->Start();
+    IDecode *decode = new FFDecode();
+    decode->Open(demux->GetVPara());
     XSleep(3000);
     demux->Stop();
 //    for (; ; ) {

@@ -35,6 +35,20 @@ bool FFDemux::Open(const char *url){
     LOGK("totalMS ms = %lld!\n",mTotalMS);
     return true;
 }
+XParameter FFDemux::GetVPara(){
+    if (!mContext) {
+        LOGK(" mContex is null");
+        return XParameter();
+    }
+    int ret = av_find_best_stream(mContext, AVMEDIA_TYPE_VIDEO, -1, -1, NULL, 0);
+    if (ret < 0) {
+        return XParameter();
+    }
+    AVStream* stream = mContext->streams[ret];
+    XParameter para;
+    para.par = stream->codecpar;
+    return para;
+}
 // 读取一帧数据，数据由调用者清理
 XData FFDemux::Read(){
     if(!mContext) return XData();
