@@ -16,7 +16,7 @@
 class IObserver : public XThread{
 public:
     //观察者接受数据函数
-    virtual void Update(XData data){}
+    virtual void Update(XData pkt){}
     //主体函数，添加观察者(线程安全)
     void AddObservers(IObserver *obs);
     //通知所有观察者(线程安全)

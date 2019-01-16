@@ -36,10 +36,11 @@ public:
     vDecode->Open(demux->GetVPara());
     IDecode *aDecode = new FFDecode();
     aDecode->Open(demux->GetVPara());
+    demux->AddObservers(vDecode);
+    demux->AddObservers(aDecode);
     
-    
-    XSleep(3000);
-    demux->Stop();
+//    XSleep(3000);
+//    demux->Stop();
 //    for (; ; ) {
 //        XData d = demux->Read();
 //        LOGK("read size",d->size);

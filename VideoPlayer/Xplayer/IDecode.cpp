@@ -7,6 +7,12 @@
 //
 
 #include "IDecode.h"
+//观察者接受数据函数
+void IDecode::Update(XData pkt){
+    if (pkt.isAudio != isAudio) {
+        return;
+    }
+}
 void IDecode::Main(){
     
 }

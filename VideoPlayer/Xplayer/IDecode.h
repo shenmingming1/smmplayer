@@ -11,6 +11,7 @@
 #include "XParameter.h"
 #include "XData.h"
 #include "IObserver.h"
+#include <list>
 class IDecode : public IObserver{
     
 public:
@@ -20,8 +21,15 @@ public:
     virtual bool SendPacket(XData pkt) = 0;
     //从线程中获取解码结果
     virtual XData ReceviceFrame() = 0;
+    //观察者接受数据函数
+    virtual void Update(XData pkt);
+    
+    bool isAudio = false;
 protected:
+    
     virtual void Main();
+    //读取缓冲
+    std::list<XData> packs;
 };
 
 #endif /* IDecode_hpp */

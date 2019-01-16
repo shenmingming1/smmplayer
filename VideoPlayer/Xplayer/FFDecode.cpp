@@ -34,6 +34,11 @@ bool FFDecode::Open(XParameter para){
         LOGK("avcodec_open2 failed :%s\n",buf);
         return false;
     }
+    if (codec->type == AVMEDIA_TYPE_AUDIO) {
+        isAudio = true;
+    }else if (codec->type == AVMEDIA_TYPE_VIDEO){
+        isAudio = false;
+    }
     LOGK("open codec success\n");
     return true;
 }
