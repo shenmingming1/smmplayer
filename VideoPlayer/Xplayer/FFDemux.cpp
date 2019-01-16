@@ -33,6 +33,8 @@ bool FFDemux::Open(const char *url){
     }
     mTotalMS = mContext->duration/(AV_TIME_BASE/1000);
     LOGK("totalMS ms = %lld!\n",mTotalMS);
+    GetVPara();
+    GetAPara();
     return true;
 }
 XParameter FFDemux::GetVPara(){
@@ -45,6 +47,22 @@ XParameter FFDemux::GetVPara(){
         return XParameter();
     }
     AVStream* stream = mContext->streams[ret];
+    videoStream = ret;
+    XParameter para;
+    para.par = stream->codecpar;
+    return para;
+}
+XParameter FFDemux::GetAPara(){
+    if (!mContext) {
+        LOGK(" mContex is null");
+        return XParameter();
+    }
+    int ret = av_find_best_stream(mContext, AVMEDIA_TYPE_AUDIO, -1, -1, NULL, 0);
+    if (ret < 0) {
+        return XParameter();
+    }
+    AVStream* stream = mContext->streams[ret];
+    audioStream = ret;
     XParameter para;
     para.par = stream->codecpar;
     return para;
@@ -56,6 +74,15 @@ XData FFDemux::Read(){
     AVPacket *pkt = av_packet_alloc();
     int re = av_read_frame(mContext, pkt);
     if (re != 0) {
+        av_packet_free(&pkt);
+        LOGK("read failed\n");
+        return XData();
+    }
+    if (pkt->stream_index == audioStream) {
+        data.isAudio = true;
+    }else if (pkt->stream_index == videoStream){
+        data.isAudio = false;
+    }else {
         av_packet_free(&pkt);
         LOGK("read failed\n");
         return XData();

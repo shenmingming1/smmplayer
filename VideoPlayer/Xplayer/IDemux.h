@@ -18,6 +18,7 @@ public:
     virtual bool Open(const char *url) = 0;
     //获取视频参数
     virtual XParameter GetVPara() = 0;
+    virtual XParameter GetAPara() = 0;
     // 读取一帧数据，数据由调用者清理
     virtual XData Read() = 0;
 protected:

@@ -16,11 +16,14 @@ public:
     //打开文件，或者流媒体 rmtp,http rtsp
     virtual bool Open(const char *url);
     virtual XParameter GetVPara();
+    virtual XParameter GetAPara();
     // 读取一帧数据，数据由调用者清理
     virtual XData Read();
     int64_t mTotalMS;
 private:
     AVFormatContext *mContext;
+    int videoStream = 0;
+    int audioStream = 1;
     
     
 };

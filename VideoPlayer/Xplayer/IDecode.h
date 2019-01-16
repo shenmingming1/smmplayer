@@ -10,7 +10,8 @@
 #define IDecode_hpp
 #include "XParameter.h"
 #include "XData.h"
-class IDecode {
+#include "IObserver.h"
+class IDecode : public IObserver{
     
 public:
     //打开解码器
@@ -19,6 +20,8 @@ public:
     virtual bool SendPacket(XData pkt) = 0;
     //从线程中获取解码结果
     virtual XData ReceviceFrame() = 0;
+protected:
+    virtual void Main();
 };
 
 #endif /* IDecode_hpp */

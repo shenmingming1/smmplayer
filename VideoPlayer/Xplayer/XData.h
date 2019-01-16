@@ -13,6 +13,7 @@
 struct XData{
     unsigned char *data = 0;
     int size = 0;
+    int isAudio = false;
     void Drop();
 };
 #endif /* XData_hpp */

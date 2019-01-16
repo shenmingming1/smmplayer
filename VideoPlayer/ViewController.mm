@@ -32,8 +32,12 @@ public:
     demux->Open(filePath_char);
     demux->AddObservers(test);
     demux->Start();
-    IDecode *decode = new FFDecode();
-    decode->Open(demux->GetVPara());
+    IDecode *vDecode = new FFDecode();
+    vDecode->Open(demux->GetVPara());
+    IDecode *aDecode = new FFDecode();
+    aDecode->Open(demux->GetVPara());
+    
+    
     XSleep(3000);
     demux->Stop();
 //    for (; ; ) {
