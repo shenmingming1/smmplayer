@@ -53,7 +53,7 @@ bool FFDecode::SendPacket(XData pkt){
     }
     return true;
 }
-//从线程中获取解码结果
+//从线程中获取解码结果,再次调用是复用上次的结果，线程不安全
 XData FFDecode::ReceviceFrame(){
     if (!mcodecContex) {
         return XData();
@@ -69,6 +69,9 @@ XData FFDecode::ReceviceFrame(){
     d.data = (unsigned char *)frame;
     if (mcodecContex->codec_type == AVMEDIA_TYPE_VIDEO){
         d.size = (frame->linesize[0]+frame->linesize[1]+frame->linesize[2])*frame->height;
+    }else{
+        //一个样本所占字节数*单通道字节数*通道数
+        d.size = av_get_bytes_per_sample((AVSampleFormat)frame->format)*frame->nb_samples*frame->channels;
     }
     
     return d;

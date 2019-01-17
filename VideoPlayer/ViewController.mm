@@ -30,15 +30,19 @@ public:
     TestObserver * test = new TestObserver();
     IDemux *demux = new FFDemux();
     demux->Open(filePath_char);
-    demux->AddObservers(test);
-    demux->Start();
+//    demux->AddObservers(test);
     IDecode *vDecode = new FFDecode();
     vDecode->Open(demux->GetVPara());
+    
     IDecode *aDecode = new FFDecode();
     aDecode->Open(demux->GetVPara());
+    
     demux->AddObservers(vDecode);
     demux->AddObservers(aDecode);
     
+    demux->Start();
+    aDecode->Start();
+    vDecode->Start();
 //    XSleep(3000);
 //    demux->Stop();
 //    for (; ; ) {

@@ -16,7 +16,7 @@ public:
     virtual bool Open(XParameter para);
     //future模型,发送数据到线程解码
     virtual bool SendPacket(XData pkt);
-    //从线程中获取解码结果
+    //从线程中获取解码结果,再次调用是复用上次的结果，线程不安全
     virtual XData ReceviceFrame();
 protected:
     AVCodecContext *mcodecContex = 0;
