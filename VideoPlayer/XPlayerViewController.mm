@@ -56,18 +56,6 @@ static const char *fragYUV420P = GET_STR(
                                          }
                                          );
 
-GLuint CreateTexture2D(unsigned char*pixelData, int width, int height, GLenum type) {
-    GLuint texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);//该函数表示的是当所显示的纹理比加载进来的纹理大时，采用GL_LINEAR的方法来处理
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);//该函数表示的是当所显示的纹理比加载进来的纹理小时，采用GL_LINEAR的方法来处理
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexImage2D(GL_TEXTURE_2D, 0, type, width, height, 0, type, GL_UNSIGNED_BYTE, pixelData);//将像素数据上传到GPU上，　参数1为纹理目标；参数2为目标的层次，即目标的详细程度，一般情况采用0即可；参数3表示的是数据成分的个数，如果数据由RGB构成，则将该参数设置为3；参数4和5分别为创建纹理数据的长和宽；参数6为边框的值，一般也设为0；参数8为数据的通道格式；参数9为纹理的数据元素类型；参数10为纹理的数据内容。
-    
-    return texture;
-}
 class TestObserver : public IObserver{
 private:
     void* mUser;
@@ -310,7 +298,7 @@ static GLuint InitShader(const char *code,GLint type)
 
     xdata = data;
     
-    XSleep(20);
+    XSleep(100);
 }
 
 @end
