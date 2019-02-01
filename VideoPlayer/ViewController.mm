@@ -11,6 +11,7 @@
 #include "Xplayer/FFDemux.h"
 #include "Xplayer/XLog.h"
 #include "Xplayer/FFDecode.h"
+#include "XPlayerViewController.h"
 class TestObserver : public IObserver{
 public:
     virtual void Update(XData data){
@@ -25,24 +26,10 @@ public:
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"];
-    const char* filePath_char = [filePath UTF8String];
-    TestObserver * test = new TestObserver();
-    IDemux *demux = new FFDemux();
-    demux->Open(filePath_char);
-//    demux->AddObservers(test);
-    IDecode *vDecode = new FFDecode();
-    vDecode->Open(demux->GetVPara());
+ 
+    XPlayerViewController *viewController = [[XPlayerViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:NO];
     
-    IDecode *aDecode = new FFDecode();
-    aDecode->Open(demux->GetVPara());
-    
-    demux->AddObservers(vDecode);
-    demux->AddObservers(aDecode);
-    
-    demux->Start();
-    aDecode->Start();
-    vDecode->Start();
 //    XSleep(3000);
 //    demux->Stop();
 //    for (; ; ) {

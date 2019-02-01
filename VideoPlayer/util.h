@@ -14,10 +14,12 @@
 #include <stdio.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
-@interface util : NSObject
 GLuint initShader(GLenum shaderType, const char*shaderCode);
 GLuint CreateProgram(GLuint vsShader, GLuint fsShader);
+GLuint CompileShader(GLenum shaderType, const char*shaderPath);
+
+@interface util : NSObject
+
 @end
 
 NS_ASSUME_NONNULL_END
