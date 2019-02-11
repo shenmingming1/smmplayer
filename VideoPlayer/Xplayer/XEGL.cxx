@@ -27,6 +27,7 @@ public:
     virtual bool Init(void *win)
     {
         
+        
         return true;
     }
 };

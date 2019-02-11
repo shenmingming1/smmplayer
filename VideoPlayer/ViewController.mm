@@ -12,6 +12,19 @@
 #include "Xplayer/XLog.h"
 #include "Xplayer/FFDecode.h"
 #include "XPlayerViewController.h"
+#import "OpenGLView.h"
+#include "GLVideoView.h"
+extern "C" {
+    
+    static int updateData(void* user,XData data) {
+        
+        OpenGLView *client = (__bridge id)user;
+        XSleep(30);
+        [client updateDataController:data];
+        return -1;
+    }
+}
+
 class TestObserver : public IObserver{
 public:
     virtual void Update(XData data){
@@ -20,6 +33,7 @@ public:
 };
 @interface ViewController ()
 @property (strong, nonatomic) EAGLContext *context;
+@property (strong, nonatomic) OpenGLView* openglView;
 @end
 
 @implementation ViewController
@@ -27,18 +41,33 @@ public:
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    XPlayerViewController *viewController = [[XPlayerViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:NO];
+//    XPlayerViewController *viewController = [[XPlayerViewController alloc] init];
+//    [self.navigationController pushViewController:viewController animated:NO];
+    self.openglView = [[OpenGLView alloc] init];
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"];
+    const char* filePath_char = [filePath UTF8String];
     
-//    XSleep(3000);
-//    demux->Stop();
-//    for (; ; ) {
-//        XData d = demux->Read();
-//        LOGK("read size",d->size);
-//    }
-//    openFile();
+    IDemux *demux = new FFDemux();
+    demux->Open(filePath_char);
+    
+    IDecode *vDecode = new FFDecode();
+    vDecode->Open(demux->GetVPara());
+    
+    IDecode *aDecode = new FFDecode();
+    aDecode->Open(demux->GetAPara());
 
-   
-    // Do any additional setup after loading the view, typically from a nib.
+    demux->AddObservers(vDecode);
+    demux->AddObservers(aDecode);
+    IVideoView *view = new GLVideoView();
+    view->SetRender((__bridge void*)_openglView, updateData);
+    vDecode->AddObservers(view);
+    
+    demux->Start();
+    vDecode->Start();
+    aDecode->Start();
+    _openglView.frame = self.view.bounds;
+    _openglView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_openglView];
+
 }
 @end

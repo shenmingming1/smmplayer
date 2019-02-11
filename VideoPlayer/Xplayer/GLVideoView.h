@@ -11,18 +11,20 @@
 
 #include "XData.h"
 #include "IVideoView.h"
-
+//#import "OpenGLView.h"
 class XTexture;
 
 class GLVideoView: public IVideoView {
 public:
-    virtual void SetRender(void *win);
+    virtual void SetRender(void* user,updateD callback);
     virtual void Render(XData data);
     virtual void Close();
 protected:
     void *view = 0;
     XTexture *txt = 0;
     std::mutex mux;
+    updateD mCallBack;
+//    OpenGLView* openView;
 };
 
 

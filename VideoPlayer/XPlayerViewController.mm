@@ -281,7 +281,7 @@ static GLuint InitShader(const char *code,GLint type)
                      0,             //边框
                      format,//数据的像素格式 亮度，灰度图 要与上面一致
                      GL_UNSIGNED_BYTE, //像素的数据类型
-                     buffer                    //纹理的数据
+                     NULL                    //纹理的数据
                      );
     }
     

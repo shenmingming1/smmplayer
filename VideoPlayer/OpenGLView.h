@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#include "XData.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OpenGLView : UIView{
@@ -15,8 +15,18 @@ NS_ASSUME_NONNULL_BEGIN
     EAGLContext* _context;
     GLuint _colorRenderBuffer;
     GLuint _frameBuffer;
+    GLuint vertexBufferId;
+    GLuint program;
+    GLint positionLocation;
+    GLint aTexCoord;
+    XData xdata;
+    GLuint texts[100];
+    unsigned int vsh;
+    unsigned int fsh;
+    int             _vertCount;
+    GLuint          _vbo;
 }
-
+- (void)updateDataController:(XData)data;
 @end
 
 NS_ASSUME_NONNULL_END
