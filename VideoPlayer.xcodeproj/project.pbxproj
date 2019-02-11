@@ -10,7 +10,7 @@
 		4C27713721F2FF7400A90E17 /* IVideoView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C27713521F2FF7400A90E17 /* IVideoView.cpp */; };
 		4C27713A21F2FF8800A90E17 /* GLVideoView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C27713821F2FF8800A90E17 /* GLVideoView.cpp */; };
 		4C27713D21F2FFB200A90E17 /* XTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C27713B21F2FFB200A90E17 /* XTexture.cpp */; };
-		4C27714021F2FFC300A90E17 /* XEGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C27713E21F2FFC300A90E17 /* XEGL.cpp */; };
+		4C27714021F2FFC300A90E17 /* XEGL.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 4C27713E21F2FFC300A90E17 /* XEGL.cxx */; };
 		4C27714321F2FFD100A90E17 /* XShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C27714121F2FFD100A90E17 /* XShader.cpp */; };
 		4C2AF34E21E8C795009BFADF /* IObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AF34C21E8C795009BFADF /* IObserver.cpp */; };
 		4C2AF35121E8D184009BFADF /* IDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AF34F21E8D184009BFADF /* IDecode.cpp */; };
@@ -38,7 +38,8 @@
 		4C3C2D2721E4E7190029BCE0 /* XData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C2D2521E4E7190029BCE0 /* XData.cpp */; };
 		4C3C2D3021E623C30029BCE0 /* XLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C2D2E21E623C30029BCE0 /* XLog.mm */; };
 		4C3C2D3321E636740029BCE0 /* XThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C2D3121E636740029BCE0 /* XThread.cpp */; };
-		4C3ECDC522000E1D002EC1FF /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ECDC422000E1D002EC1FF /* OpenGLView.m */; };
+		4C3ECDC522000E1D002EC1FF /* OpenGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ECDC422000E1D002EC1FF /* OpenGLView.mm */; };
+		4C465455220588A00084A98D /* earth.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 4C465454220588A00084A98D /* earth.bmp */; };
 		4C617D0E21D3B42700BF0DF7 /* 2s5fh-w8kz2.flv in Resources */ = {isa = PBXBuildFile; fileRef = 4C617D0D21D3B42700BF0DF7 /* 2s5fh-w8kz2.flv */; };
 		4CA379D521DB6E26008FA4C3 /* util.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379D421DB6E26008FA4C3 /* util.mm */; };
 		4CA379D721DB73E0008FA4C3 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA379D621DB73E0008FA4C3 /* GLKit.framework */; };
@@ -70,7 +71,7 @@
 		4C27713921F2FF8800A90E17 /* GLVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLVideoView.h; sourceTree = "<group>"; };
 		4C27713B21F2FFB200A90E17 /* XTexture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTexture.cpp; sourceTree = "<group>"; };
 		4C27713C21F2FFB200A90E17 /* XTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTexture.h; sourceTree = "<group>"; };
-		4C27713E21F2FFC300A90E17 /* XEGL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XEGL.cpp; sourceTree = "<group>"; };
+		4C27713E21F2FFC300A90E17 /* XEGL.cxx */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XEGL.cxx; sourceTree = "<group>"; };
 		4C27713F21F2FFC300A90E17 /* XEGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XEGL.h; sourceTree = "<group>"; };
 		4C27714121F2FFD100A90E17 /* XShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XShader.cpp; sourceTree = "<group>"; };
 		4C27714221F2FFD100A90E17 /* XShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XShader.h; sourceTree = "<group>"; };
@@ -243,7 +244,8 @@
 		4C3C2D3121E636740029BCE0 /* XThread.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XThread.cpp; sourceTree = "<group>"; };
 		4C3C2D3221E636740029BCE0 /* XThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XThread.h; sourceTree = "<group>"; };
 		4C3ECDC322000E1D002EC1FF /* OpenGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLView.h; sourceTree = "<group>"; };
-		4C3ECDC422000E1D002EC1FF /* OpenGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLView.m; sourceTree = "<group>"; };
+		4C3ECDC422000E1D002EC1FF /* OpenGLView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenGLView.mm; sourceTree = "<group>"; };
+		4C465454220588A00084A98D /* earth.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = earth.bmp; sourceTree = "<group>"; };
 		4C617D0D21D3B42700BF0DF7 /* 2s5fh-w8kz2.flv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2s5fh-w8kz2.flv"; sourceTree = "<group>"; };
 		4CA379D321DB6E26008FA4C3 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		4CA379D421DB6E26008FA4C3 /* util.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = util.mm; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				4C362B43218956EB00814CDD /* test.mp4 */,
 				4CD4CCBC220144FE0018F7CF /* 1.mp4 */,
 				4C36269D21888BA000814CDD /* AppDelegate.m */,
+				4C465454220588A00084A98D /* earth.bmp */,
 				4C36269F21888BA000814CDD /* ViewController.h */,
 				4C3626A021888BA000814CDD /* ViewController.mm */,
 				4C3626A221888BA000814CDD /* Main.storyboard */,
@@ -344,7 +347,7 @@
 				4C34DDD321F5F6AA002BC263 /* XPlayerViewController.h */,
 				4C34DDD421F5F6AA002BC263 /* XPlayerViewController.mm */,
 				4C3ECDC322000E1D002EC1FF /* OpenGLView.h */,
-				4C3ECDC422000E1D002EC1FF /* OpenGLView.m */,
+				4C3ECDC422000E1D002EC1FF /* OpenGLView.mm */,
 			);
 			path = VideoPlayer;
 			sourceTree = "<group>";
@@ -661,7 +664,7 @@
 				4C27713921F2FF8800A90E17 /* GLVideoView.h */,
 				4C27713B21F2FFB200A90E17 /* XTexture.cpp */,
 				4C27713C21F2FFB200A90E17 /* XTexture.h */,
-				4C27713E21F2FFC300A90E17 /* XEGL.cpp */,
+				4C27713E21F2FFC300A90E17 /* XEGL.cxx */,
 				4C27713F21F2FFC300A90E17 /* XEGL.h */,
 				4C27714121F2FFD100A90E17 /* XShader.cpp */,
 				4C27714221F2FFD100A90E17 /* XShader.h */,
@@ -801,6 +804,7 @@
 				4C617D0E21D3B42700BF0DF7 /* 2s5fh-w8kz2.flv in Resources */,
 				4C3626A621888BA200814CDD /* Assets.xcassets in Resources */,
 				4C3626A421888BA000814CDD /* Main.storyboard in Resources */,
+				4C465455220588A00084A98D /* earth.bmp in Resources */,
 				4CD4CCBD220145260018F7CF /* 1.mp4 in Resources */,
 				4C362B472189647600814CDD /* test.mp4 in Resources */,
 			);
@@ -831,7 +835,7 @@
 				4C3C2D3021E623C30029BCE0 /* XLog.mm in Sources */,
 				4C2AF35421E8D195009BFADF /* FFDecode.cpp in Sources */,
 				4C2AF35121E8D184009BFADF /* IDecode.cpp in Sources */,
-				4C27714021F2FFC300A90E17 /* XEGL.cpp in Sources */,
+				4C27714021F2FFC300A90E17 /* XEGL.cxx in Sources */,
 				4C34DDD521F5F6AA002BC263 /* XPlayerViewController.mm in Sources */,
 				4CA379D521DB6E26008FA4C3 /* util.mm in Sources */,
 				4C27713A21F2FF8800A90E17 /* GLVideoView.cpp in Sources */,
@@ -845,7 +849,7 @@
 				4C2AF35721E8D1C5009BFADF /* XParameter.cpp in Sources */,
 				4C36269E21888BA000814CDD /* AppDelegate.m in Sources */,
 				4C2AF34E21E8C795009BFADF /* IObserver.cpp in Sources */,
-				4C3ECDC522000E1D002EC1FF /* OpenGLView.m in Sources */,
+				4C3ECDC522000E1D002EC1FF /* OpenGLView.mm in Sources */,
 				4C27714321F2FFD100A90E17 /* XShader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
